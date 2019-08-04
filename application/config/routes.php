@@ -2,6 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$route['default_controller'] = 'clientesController';
+$route['default_controller'] = 'Clientes';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -114,7 +114,7 @@
     </div>
 </div>
 
-<input type="hidden" id="baseUri" value="<?php base_url('clientesController/getDepartamentos') ?>" >
+<input type="hidden" id="baseUri" value="<?php base_url('Clientes/getDepartamentos') ?>" >
 <script>
     window.onload = ()=>{
         cargarDepartamentos()
@@ -201,7 +201,7 @@
                  document.getElementById(`departamento`).classList.add('is-valid');
                  document.getElementById(`ciudad`).focus();
                  document.getElementById(`ciudad`).value = "";
-                 var url = '<?php echo base_url('clientesController/getMunicipios')?>';
+                 var url = '<?php echo base_url('Clientes/getMunicipios')?>';
 
                  $.post(`${url}`,{"id":id_departamento},(res)=>{
                      let municipios = JSON.parse(res);
@@ -291,7 +291,7 @@
             {
                 const data = new FormData(document.getElementById('form_clientes'));
                 data.append('edit',edit);
-                fetch('<?php echo base_url('clientesController/regCliente') ?>', {
+                fetch('<?php echo base_url('Clientes/regCliente') ?>', {
                     method: 'POST',
                     body: data
                 })
@@ -360,7 +360,7 @@
     function cargarDepartamentos()
     {
         $('#departamentos').html("")
-         fetch("<?php echo base_url('clientesController/getDepartamentos') ?>")
+         fetch("<?php echo base_url('Clientes/getDepartamentos') ?>")
             .then(response => response.json())
             .then(data => {
                 data.forEach((val,index,array)=>{
@@ -377,7 +377,7 @@
     function  getAllmunicipios()
     {
         $('#ciudades').html("")
-        fetch("<?php echo base_url('clientesController/getAllmunicipios') ?>")
+        fetch("<?php echo base_url('Clientes/getAllmunicipios') ?>")
             .then(response => response.json())
             .then(data => {
                 data.forEach((val,index,array)=>{
@@ -413,7 +413,7 @@
                 { responsivePriority: 1, targets: 1 },
                 { responsivePriority: 2, targets: -2 }
             ],
-            ajax: "<?php echo base_url('clientesController/getClientes')?>",
+            ajax: "<?php echo base_url('Clientes/getClientes')?>",
             columns: [
                 { "data": "nombre" },
                 { "data": "apellido" },
@@ -431,7 +431,7 @@
 
       if(conf)
       {
-          $.post('<?php echo base_url('clientesController/destroy') ?>',{"id":id},(res)=>{
+          $.post('<?php echo base_url('Clientes/destroy') ?>',{"id":id},(res)=>{
               console.log(res)
               if(res)
               {
@@ -445,7 +445,7 @@
    // funcion para mostrar el detalle del cliente en el formulario
     function show(id)
     {
-        $.post('<?php echo base_url('clientesController/show') ?>',{"id":id},(res)=>{
+        $.post('<?php echo base_url('Clientes/show') ?>',{"id":id},(res)=>{
            let json = JSON.parse(res)
             if(res){
                 json.forEach((val,index,arr)=>{
@@ -483,7 +483,7 @@
     }
     function edit(id)
     {
-        $.post('<?php echo base_url('clientesController/show') ?>',{"id":id},(res)=>{
+        $.post('<?php echo base_url('Clientes/show') ?>',{"id":id},(res)=>{
             let json = JSON.parse(res)
             if(res){
                 json.forEach((val,index,arr)=>{

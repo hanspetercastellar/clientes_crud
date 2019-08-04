@@ -11,7 +11,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Volcando estructura para tabla prueba.clientes
+-- Volcando estructura para tabla hanspete_hanspete_prueba.clientes
 CREATE TABLE IF NOT EXISTS `clientes` (
   `id_cliente` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `cliente_nombre` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   CONSTRAINT `FK2_municipios` FOREIGN KEY (`municipio_id`) REFERENCES `municipios` (`id_municipio`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- Volcando datos para la tabla prueba.clientes: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla hanspete_hanspete_prueba.clientes: ~7 rows (aproximadamente)
 DELETE FROM `clientes`;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
 INSERT INTO `clientes` (`id_cliente`, `cliente_nombre`, `cliente_apellido`, `tipo_doc`, `cliente_numero_doc`, `cliente_telefono`, `municipio_id`, `cliente_direccion`, `cliente_email`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -45,14 +45,14 @@ INSERT INTO `clientes` (`id_cliente`, `cliente_nombre`, `cliente_apellido`, `tip
 	(20, 'juan perez', 'castillo', 'CEDULA DE CIUDADANIA', '102054978', '21548866', 251, 'SDFSFSFA', 'PEP@GMAIL.COM', '2019-09-01', NULL, NULL);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 
--- Volcando estructura para tabla prueba.departamentos
+-- Volcando estructura para tabla hanspete_hanspete_prueba.departamentos
 CREATE TABLE IF NOT EXISTS `departamentos` (
   `id_departamento` int(2) unsigned NOT NULL AUTO_INCREMENT,
   `departamento` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id_departamento`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla prueba.departamentos: ~33 rows (aproximadamente)
+-- Volcando datos para la tabla hanspete_hanspete_prueba.departamentos: ~33 rows (aproximadamente)
 DELETE FROM `departamentos`;
 /*!40000 ALTER TABLE `departamentos` DISABLE KEYS */;
 INSERT INTO `departamentos` (`id_departamento`, `departamento`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `departamentos` (`id_departamento`, `departamento`) VALUES
 	(99, 'VICHADA');
 /*!40000 ALTER TABLE `departamentos` ENABLE KEYS */;
 
--- Volcando estructura para tabla prueba.municipios
+-- Volcando estructura para tabla hanspete_prueba.municipios
 CREATE TABLE IF NOT EXISTS `municipios` (
   `id_municipio` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `municipio` varchar(255) NOT NULL DEFAULT '',
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `municipios` (
   KEY `departamento_id` (`departamento_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1101 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla prueba.municipios: ~1.100 rows (aproximadamente)
+-- Volcando datos para la tabla hanspete_prueba.municipios: ~1.100 rows (aproximadamente)
 DELETE FROM `municipios`;
 /*!40000 ALTER TABLE `municipios` DISABLE KEYS */;
 INSERT INTO `municipios` (`id_municipio`, `municipio`, `estado`, `departamento_id`) VALUES
@@ -1207,14 +1207,14 @@ INSERT INTO `municipios` (`id_municipio`, `municipio`, `estado`, `departamento_i
 	(1100, 'Útica', 1, 25);
 /*!40000 ALTER TABLE `municipios` ENABLE KEYS */;
 
--- Volcando estructura para tabla prueba.tipos_documentos
+-- Volcando estructura para tabla hanspete_hanspete_prueba.tipos_documentos
 CREATE TABLE IF NOT EXISTS `tipos_documentos` (
   `id_tipo_documento` int(10) NOT NULL AUTO_INCREMENT,
   `tipo_documento` varchar(40) COLLATE utf8_spanish2_ci DEFAULT NULL,
   PRIMARY KEY (`id_tipo_documento`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- Volcando datos para la tabla prueba.tipos_documentos: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla hanspete_hanspete_prueba.tipos_documentos: ~4 rows (aproximadamente)
 DELETE FROM `tipos_documentos`;
 /*!40000 ALTER TABLE `tipos_documentos` DISABLE KEYS */;
 INSERT INTO `tipos_documentos` (`id_tipo_documento`, `tipo_documento`) VALUES

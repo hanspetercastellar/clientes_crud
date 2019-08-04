@@ -60,7 +60,7 @@
      function cargarGrafica1(mes)
      {
 
-         $.post(`<?php echo base_url('graficasController/getEstadistica1')?>`,{'mes':mes},(res)=>{
+         $.post(`<?php echo base_url('Graficas/getEstadistica1')?>`,{'mes':mes},(res)=>{
              let json = JSON.parse(res);
 
              grafica1(json)

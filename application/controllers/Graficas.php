@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class graficasController extends CI_Controller{
+    class Graficas extends CI_Controller{
 
         function __construct()
         {
